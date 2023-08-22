@@ -1,0 +1,45 @@
+nav {
+  background-color: #0c356a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: whitesmoke;
+  box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.7);
+
+  img {
+    @keyframes spinning {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    animation: spinning 10s infinite linear;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+
+    li {
+      &:hover {
+        cursor: pointer;
+      }
+      &:active {
+        translate: 0 3px;
+        color: rgb(150, 150, 150);
+      }
+      a {
+        text-decoration: none;
+        color: inherit;        
+      }
+    }
+  }
+}
