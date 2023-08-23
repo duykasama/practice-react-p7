@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Header from "./components/Header/Header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -10,6 +10,7 @@ import SignUpSuccess from "./pages/SignUpSuccess";
 import Loader from "./components/Loader/Loader";
 import PageNotFound from "./pages/PageNotFound";
 import DigitalCard from "./pages/DigitalCard";
+import AirbnbExperience from "./pages/AirbnbExperience";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/form-practice" element={<FormPractice />} />
         <Route path="/signup-success" element={<SignUpSuccess />} />
         <Route path="/digital-card" element={<DigitalCard />} />
+        <Route path="/airbnb-experience" element={<AirbnbExperience />} />
         <Route path="/test" element={<Loader />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

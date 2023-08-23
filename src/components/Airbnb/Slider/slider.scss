@@ -1,0 +1,24 @@
+.card-slider {
+    display: flex;
+    justify-content: left;
+    align-items: top;
+    flex-wrap: nowrap;
+    overflow: scroll hidden;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+::-webkit-scrollbar {
+    width: 100%;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.2);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+} 
+
+

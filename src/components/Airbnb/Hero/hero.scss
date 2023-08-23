@@ -1,0 +1,14 @@
+.hero {
+  height: 150px;
+  width: 300px;
+  margin: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  .hero--img {
+    width: 50px;
+    border-radius: 7px;
+  }
+}

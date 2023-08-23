@@ -1,0 +1,27 @@
+.card {
+  width: fit-content;
+  min-height: 100%;
+  font-size: 0.65rem;
+  position: relative;
+  top: 0;
+  .car--img {
+    height: 200px;
+    border-radius: 7px;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .star {
+      color: red;
+    }
+  }
+  .status {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    margin: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+  }
+}
