@@ -30,12 +30,10 @@
         border: none;
         &:hover {
           cursor: pointer;
+          box-shadow: inset 1px 1px 5px 1px #202020;
         }
         &:active {
           font-size: 0.5rem;
-        }
-        &:hover {
-          box-shadow: inset 1px 1px 5px 1px #202020;
         }
       }
       .btn-email {
