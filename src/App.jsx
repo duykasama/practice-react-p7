@@ -11,6 +11,7 @@ import Loader from "./components/Loader/Loader";
 import PageNotFound from "./pages/PageNotFound";
 import DigitalCard from "./pages/DigitalCard";
 import AirbnbExperience from "./pages/AirbnbExperience";
+import TravelJournal from "./pages/TravelJournal";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/signup-success" element={<SignUpSuccess />} />
         <Route path="/digital-card" element={<DigitalCard />} />
         <Route path="/airbnb-experience" element={<AirbnbExperience />} />
+        <Route path="/travel-journal" element={<TravelJournal />} />
         <Route path="/test" element={<Loader />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

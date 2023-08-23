@@ -1,0 +1,37 @@
+.journal {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: left;
+    gap: 0.5rem;
+  }
+  img {
+    width: 135px;
+    height: 200px;
+    border-radius: 5px;
+  }
+  .location-dot {
+    color: #f55a5a;
+    margin-right: 0.25rem;
+  }
+  .location {
+    letter-spacing: 0.1rem;
+  }
+  .view-location {
+    color: #918e9b;
+    margin-left: 1rem;
+    border-bottom: 1px solid #918e9b;
+  }
+  h1 {
+    font-size: x-large;
+  }
+  a {
+    text-decoration: none;
+  }
+}
