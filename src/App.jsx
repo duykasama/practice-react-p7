@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import FormPractice from "./pages/FormPractice";
 import SignUpSuccess from "./pages/SignUpSuccess";
 import Loader from "./components/Loader/Loader";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/form-practice" element={<FormPractice />} />
         <Route path="/signup-success" element={<SignUpSuccess />} />
         <Route path="/test" element={<Loader />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </>

@@ -1,24 +1,45 @@
 import "./navbar.scss";
 import reactLogo from "../../assets/react.svg";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 function Navbar() {
+  const [shown, setShown] = useState(false);
+  const changeShowStatus = () => {
+    setShown((prevState) => !prevState);
+  };
+
+  const hide = () => {
+    setShown(false);
+  };
   return (
     <nav>
-      <Link to={'/'}>
+      <Link to={"/"}>
         <img src={reactLogo} alt="React logo" />
       </Link>
-      <ul>
-        <li>
-          <Link to={"/box-challenge"}>Box challenge</Link>
-        </li>
-        <li>
-          <Link to={"/jokes"}>Jokes</Link>
-        </li>
-        <li>
-          <Link to={"/form-practice"}>Sign up</Link>
-        </li>
-      </ul>
+      <div className="page-navigation" onClick={changeShowStatus}>
+        <span>Select page</span>
+
+        <FontAwesomeIcon
+          
+          icon={shown ? faChevronUp : faChevronDown}
+        />
+
+        {shown && (
+          <div className="navigation-content" onMouseLeave={hide}>
+            <Link to={"/box-challenge"}>Box challenge</Link>
+            <Link to={"/jokes"}>Jokes</Link>
+            <Link to={"/form-practice"}>Sign up</Link>
+            <Link to={"/meme-generator"}>Meme generator</Link>
+            <Link to={"/airbnb-experience"}>Airbnb experience</Link>
+            <Link to={"/travel-journal"}>Travel journal</Link>
+            <Link to={"/digital-business-card"}>Digital card</Link>
+          </div>
+        )}
+      </div>
     </nav>
   );
 }

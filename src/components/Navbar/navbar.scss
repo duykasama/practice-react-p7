@@ -1,12 +1,11 @@
 nav {
-  background-color: #0c356a;
+  background-color: #1450a3;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   color: whitesmoke;
   box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.7);
-
   img {
     @keyframes spinning {
       from {
@@ -22,23 +21,45 @@ nav {
     }
   }
 
-  ul {
-    list-style: none;
+  .page-navigation {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     gap: 1rem;
-
-    li {
-      &:hover {
-        cursor: pointer;
-      }
-      &:active {
-        translate: 0 3px;
-        color: rgb(150, 150, 150);
-      }
+    padding: 0.5rem;
+    &:hover {
+      cursor: pointer;
+    }
+    .navigation-content {
+      z-index: 2;
+      color: #1450a3;
+      position: absolute;
+      top: 2rem;
+      right: 0;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 1px #505050;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+     
       a {
+        color: inherit;
         text-decoration: none;
-        color: inherit;        
+        padding: 1rem;
+        border-radius: 10px;
+        &:hover {
+          cursor: pointer;
+          background-color: #337ccf;
+          color: #000;
+        }
+        &:active {
+          translate: 0 3px;
+          color: rgb(150, 150, 150);
+        }
       }
     }
   }
