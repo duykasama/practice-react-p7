@@ -1,0 +1,16 @@
+.card-footer {
+  height: 3rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  .social-logo {
+    width: 3rem;
+    &:hover {
+      cursor: pointer;
+      transform: scale(125%);
+      transition-duration: 150ms;
+    }
+  }
+}

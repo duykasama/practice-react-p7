@@ -32,11 +32,11 @@ function Navbar() {
           <div className="navigation-content" onMouseLeave={hide}>
             <Link to={"/box-challenge"}>Box challenge</Link>
             <Link to={"/jokes"}>Jokes</Link>
-            <Link to={"/form-practice"}>Sign up</Link>
             <Link to={"/meme-generator"}>Meme generator</Link>
             <Link to={"/airbnb-experience"}>Airbnb experience</Link>
             <Link to={"/travel-journal"}>Travel journal</Link>
-            <Link to={"/digital-business-card"}>Digital card</Link>
+            <Link to={"/digital-card"}>Digital card</Link>
+            <Link to={"/form-practice"}>Sign up</Link>
           </div>
         )}
       </div>

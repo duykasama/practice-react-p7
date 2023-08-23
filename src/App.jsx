@@ -9,6 +9,7 @@ import FormPractice from "./pages/FormPractice";
 import SignUpSuccess from "./pages/SignUpSuccess";
 import Loader from "./components/Loader/Loader";
 import PageNotFound from "./pages/PageNotFound";
+import DigitalCard from "./pages/DigitalCard";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/jokes" element={<Jokes />} />
         <Route path="/form-practice" element={<FormPractice />} />
         <Route path="/signup-success" element={<SignUpSuccess />} />
+        <Route path="/digital-card" element={<DigitalCard />} />
         <Route path="/test" element={<Loader />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
