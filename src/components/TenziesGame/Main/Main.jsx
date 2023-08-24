@@ -7,6 +7,7 @@ function Main() {
   const [rollCount, setRollCount] = useState(0);
   const [dices, setDices] = useState(new Array());
   const [win, setWin] = useState(false);
+  const [displayModalBox, setDisplayModalBox] = useState(false);
   let tempArray = new Array();
 
   for (let i = 0; i < 10; i++) {
@@ -24,6 +25,11 @@ function Main() {
   }, [dices]);
 
   const roll = () => {
+    if (win) {
+      setDisplayModalBox(true);
+      return;
+    }
+
     setRollCount((prevState) => prevState + 1);
     setDices(
       dices.map((item) => ({
@@ -41,6 +47,7 @@ function Main() {
         prevValue.map((item) => ({ ...item, isFixed: true }))
       );
       setWin(true);
+      setDisplayModalBox(true);
     }
   }
 
@@ -58,7 +65,8 @@ function Main() {
     setWin(false);
     setDices([]);
     setRollCount(0);
-  }
+    setDisplayModalBox(false);
+  };
 
   return (
     <>
@@ -76,7 +84,13 @@ function Main() {
           Roll
         </button>
       </section>
-      {win && <ModalBox onClose={() => setWin(false)} onPlayAgain={handlePlayAgain} rolls={rollCount} />}
+      {displayModalBox && (
+        <ModalBox
+          onClose={() => setDisplayModalBox(false)}
+          onPlayAgain={handlePlayAgain}
+          rolls={rollCount}
+        />
+      )}
     </>
   );
 }
