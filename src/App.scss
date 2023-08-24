@@ -97,7 +97,10 @@
 }
 
 .tenzies--main {
-  height: 30dvh;
+  min-height: 30dvh;
+  height: fit-content;
+  min-width: 350px;
+  max-width: 500px;
   width: 50dvw;
   box-shadow: 4px 4px 10px 4px #505050;
   border-radius: 10px;

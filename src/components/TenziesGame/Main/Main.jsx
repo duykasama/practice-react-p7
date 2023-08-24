@@ -1,28 +1,83 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dice from "../Dice/Dice";
 import "./main.scss";
+import ModalBox from "../ModalBox/ModaBox";
 
 function Main() {
-  const [change, setChange] = useState(false);
   const [rollCount, setRollCount] = useState(0);
-  const tempArray = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+  const [dices, setDices] = useState(new Array());
+  const [win, setWin] = useState(false);
+  let tempArray = new Array();
 
-  const handleRoll = () => {
-    setChange((prevState) => !prevState);
-    setRollCount(prevState => prevState + 1);
+  for (let i = 0; i < 10; i++) {
+    const randomValue = (Math.floor(Math.random() * 10) % 6) + 1;
+    tempArray.push({ value: randomValue, isFixed: false });
+  }
+
+  useEffect(() => {
+    if (dices.length < 10) {
+      setDices(tempArray);
+    }
+    if (dices.length === 10 && !win) {
+      checkWin();
+    }
+  }, [dices]);
+
+  const roll = () => {
+    setRollCount((prevState) => prevState + 1);
+    setDices(
+      dices.map((item) => ({
+        ...item,
+        value: !item.isFixed
+          ? (Math.floor(Math.random() * 10) % 6) + 1
+          : item.value,
+      }))
+    );
   };
 
+  function checkWin() {
+    if (dices.every((dice) => dice.value === dices[0].value)) {
+      setDices((prevValue) =>
+        prevValue.map((item) => ({ ...item, isFixed: true }))
+      );
+      setWin(true);
+    }
+  }
+
+  const changeValueState = (dice) => {
+    dice.isFixed = !dice.isFixed;
+    setDices(
+      dices.map((prevValue) => ({
+        ...prevValue,
+        isFixed: prevValue.value === dice.value && dice.isFixed,
+      }))
+    );
+  };
+
+  const handlePlayAgain = () => {
+    setWin(false);
+    setDices([]);
+    setRollCount(0);
+  }
+
   return (
-    <section className="tenzies--content">
-      <div className="dices-container">
-        {tempArray.map((item, idx) => (
-          <Dice key={idx} />
-        ))}
-      </div>
-      <button onClick={handleRoll} className="btn-roll">
-        Roll
-      </button>
-    </section>
+    <>
+      <section className="tenzies--content">
+        <div className="dices-container">
+          {dices.map((item, idx) => (
+            <Dice
+              key={idx}
+              item={item}
+              handleClick={() => changeValueState(item)}
+            />
+          ))}
+        </div>
+        <button onClick={roll} className="btn-roll">
+          Roll
+        </button>
+      </section>
+      {win && <ModalBox onClose={() => setWin(false)} onPlayAgain={handlePlayAgain} rolls={rollCount} />}
+    </>
   );
 }
 
