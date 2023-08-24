@@ -16,7 +16,7 @@ function Navbar() {
     setShown(false);
   };
   return (
-    <nav>
+    <nav className="navbar">
       <Link to={"/"}>
         <img src={reactLogo} alt="React logo" />
       </Link>
@@ -30,12 +30,14 @@ function Navbar() {
 
         {shown && (
           <div className="navigation-content" onMouseLeave={hide}>
+            <Link to={"/react-facts"}>React facts</Link>
             <Link to={"/box-challenge"}>Box challenge</Link>
             <Link to={"/jokes"}>Jokes</Link>
             <Link to={"/meme-generator"}>Meme generator</Link>
             <Link to={"/airbnb-experience"}>Airbnb experience</Link>
             <Link to={"/travel-journal"}>Travel journal</Link>
             <Link to={"/digital-card"}>Digital card</Link>
+            <Link to={"/starwars-wiki"}>Starwar wiki</Link>
             <Link to={"/form-practice"}>Sign up</Link>
           </div>
         )}

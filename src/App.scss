@@ -87,5 +87,11 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  // flex-flow: nowrap;
+}
+
+.react-facts--main {
+  height: 600px;
+  width: 600px;
+  box-shadow: 4px 4px 10px 4px #505050;
+  position: relative;
 }

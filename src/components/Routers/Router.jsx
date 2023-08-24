@@ -10,11 +10,14 @@ import TravelJournal from "../../pages/TravelJournal";
 import Loader from "../Loader/Loader";
 import PageNotFound from "../../pages/PageNotFound";
 import MemeGenerator from "../../pages/MemeGenerator";
+import StarWarsWiki from "../../pages/StarWarsWiki";
+import ReactFacts from "../../pages/ReactFacts";
 
 function Router() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/react-facts" element={<ReactFacts />} />
       <Route path="/box-challenge" element={<BoxChallenge />} />
       <Route path="/jokes" element={<Jokes />} />
       <Route path="/form-practice" element={<FormPractice />} />
@@ -23,6 +26,7 @@ function Router() {
       <Route path="/airbnb-experience" element={<AirbnbExperience />} />
       <Route path="/travel-journal" element={<TravelJournal />} />
       <Route path="/meme-generator" element={<MemeGenerator />} />
+      <Route path="/starwars-wiki" element={<StarWarsWiki />} />
       <Route path="/test" element={<Loader />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
