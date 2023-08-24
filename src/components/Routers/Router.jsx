@@ -12,6 +12,7 @@ import PageNotFound from "../../pages/PageNotFound";
 import MemeGenerator from "../../pages/MemeGenerator";
 import StarWarsWiki from "../../pages/StarWarsWiki";
 import ReactFacts from "../../pages/ReactFacts";
+import Tenzies from "../../pages/Tenzies";
 
 function Router() {
   return (
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/travel-journal" element={<TravelJournal />} />
       <Route path="/meme-generator" element={<MemeGenerator />} />
       <Route path="/starwars-wiki" element={<StarWarsWiki />} />
+      <Route path="/tenzies" element={<Tenzies />} />
       <Route path="/test" element={<Loader />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>

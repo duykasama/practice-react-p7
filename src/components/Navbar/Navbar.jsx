@@ -37,7 +37,8 @@ function Navbar() {
             <Link to={"/airbnb-experience"}>Airbnb experience</Link>
             <Link to={"/travel-journal"}>Travel journal</Link>
             <Link to={"/digital-card"}>Digital card</Link>
-            <Link to={"/starwars-wiki"}>Starwar wiki</Link>
+            <Link to={"/starwars-wiki"}>Star Wars wiki</Link>
+            <Link to={"/tenzies"}>Tenzies game</Link>
             <Link to={"/form-practice"}>Sign up</Link>
           </div>
         )}

@@ -1,0 +1,19 @@
+.dice {
+    width: 2.5rem;
+    height: 2.5rem;
+    box-shadow: 0 2px 5px 1px #202020;
+    border-radius: 3px;
+    &:hover {
+        cursor: pointer;
+        transform: scale(110%);
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.fixed {
+    background-color: #59E391;
+}
