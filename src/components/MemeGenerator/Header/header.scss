@@ -1,0 +1,18 @@
+.meme--header {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  background-color: aqua;
+  background-image: linear-gradient(to right, #672280, #a626d3);
+  z-index: 0;
+  .meme--logo {
+    height: 1.75rem;
+    margin: 1rem;
+  }
+  h2 {
+    margin-right: auto;
+  }
+  span {
+    margin-right: 1rem;
+  }
+}

@@ -4,7 +4,6 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 function Journal(props) {
   const journal = props.journalObject;
-  const parts = journal.since.split("-");
   const dateFormatOption = {
     year: "numeric",
     month: "long",
