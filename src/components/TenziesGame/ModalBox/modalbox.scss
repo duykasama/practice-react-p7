@@ -16,6 +16,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  animation: fade-in 300ms ease-in-out forwards;
   .modal-box--content {
     height: 100%;
     display: flex;
@@ -61,5 +63,20 @@
       transform: scale(85%);
       transition: transform 100ms;
     }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0%);
+  }
+  66% {
+    opacity: 0.66;
+    transform: scale(130%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(100%);
   }
 }

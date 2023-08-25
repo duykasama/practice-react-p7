@@ -4,7 +4,7 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 
 function ModalBox(props) {
   return (
-    <div className="modal-box">
+    <div className="modal-box active">
       <button onClick={props.onClose} className="btn-close">
         <FontAwesomeIcon icon={faX} />
       </button>
