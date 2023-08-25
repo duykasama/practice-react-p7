@@ -56,7 +56,7 @@ function FormComponent() {
     <>
     {isLoading && <Loader />}
       {accessGranted && <Navigate to={"/signup-success"} replace={true} />}
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={handleFormSubmit} className="signup-form">
         <input
           name="email"
           type="email"
