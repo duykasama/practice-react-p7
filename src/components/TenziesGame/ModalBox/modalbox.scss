@@ -1,14 +1,17 @@
 .modal-box {
-  --height: 20dvh;
+  --height: 30dvh;
   background-color: aliceblue;
   box-shadow: 2px 2px 5px 1px #202020;
   position: fixed;
   top: calc((100% - var(--height)) / 2);
+  max-height: 300px;
+  max-width: 300px;
   height: var(--height);
   width: var(--height);
+  min-height: fit-content;
+  min-width: fit-content;
   border-radius: 10px;
-  transition: 1s ease-in-out;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,8 +50,8 @@
     border-radius: 5px;
     padding: 0.5rem;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     &:hover {
       cursor: pointer;
       box-shadow: 1px 1px 5px 2px #606060;
