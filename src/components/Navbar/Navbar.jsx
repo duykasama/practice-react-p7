@@ -39,6 +39,9 @@ function Navbar() {
             <Link to={"/digital-card"}>Digital card</Link>
             <Link to={"/starwars-wiki"}>Star Wars wiki</Link>
             <Link to={"/tenzies"}>Tenzies game</Link>
+            <Link to={"/quizzical"}>Quizzical</Link>
+            <Link to={"/demo-local-storage"}>Demo local storage</Link>
+            <Link to={"/demo-api"}>Demo api</Link>
             <Link to={"/form-practice"}>Sign up</Link>
           </div>
         )}

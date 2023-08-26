@@ -29,6 +29,7 @@
     position: relative;
     gap: 1rem;
     padding: 0.5rem;
+
     &:hover {
       cursor: pointer;
     }
@@ -45,7 +46,9 @@
       display: flex;
       flex-direction: column;
       width: max-content;
-     
+      height: 300px;
+      overflow: scroll;
+
       a {
         color: inherit;
         text-decoration: none;

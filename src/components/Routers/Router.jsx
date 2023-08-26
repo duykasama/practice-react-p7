@@ -7,12 +7,14 @@ import SignUpSuccess from "../../pages/SignUpSuccess";
 import DigitalCard from "../../pages/DigitalCard";
 import AirbnbExperience from "../../pages/AirbnbExperience";
 import TravelJournal from "../../pages/TravelJournal";
-import Loader from "../Loader/Loader";
 import PageNotFound from "../../pages/PageNotFound";
 import MemeGenerator from "../../pages/MemeGenerator";
 import StarWarsWiki from "../../pages/StarWarsWiki";
 import ReactFacts from "../../pages/ReactFacts";
 import Tenzies from "../../pages/Tenzies";
+import Quizzical from "../../pages/Quizzical";
+import DemoLocalStorage from "../../pages/DemoLocalStorage";
+import DemoApi from "../../pages/DemoApi";
 
 function Router() {
   return (
@@ -29,7 +31,9 @@ function Router() {
       <Route path="/meme-generator" element={<MemeGenerator />} />
       <Route path="/starwars-wiki" element={<StarWarsWiki />} />
       <Route path="/tenzies" element={<Tenzies />} />
-      <Route path="/test" element={<Loader />} />
+      <Route path="/quizzical" element={<Quizzical />}></Route>
+      <Route path="/demo-local-storage" element={<DemoLocalStorage />} />
+      <Route path="/demo-api" element={<DemoApi />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

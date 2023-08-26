@@ -1,0 +1,30 @@
+.play-screen {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 2rem;
+  .quizzes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .result {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
