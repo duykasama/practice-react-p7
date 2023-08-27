@@ -6,19 +6,19 @@ function Quiz(props) {
   const [answers, setAnswers] = useState([]);
   useEffect(() => {
     // answers.push(quiz.correct_answer);
-    if (answers.length === 0) {
-      setAnswers((prevAnswers) => {
-        let temp = answers;
+    
+      setAnswers(() => {
+        let temp = [];
         quiz.incorrect_answers.forEach((answer) => temp.push(answer));
         // temp.push(quiz.incorrect_answers);
         temp.push(quiz.correct_answer);
         return temp.sort((a, b) => Math.random() - 0.5);
         // return temp;
       });
-    }
+    
     // answers = answers.sort((a, b) => Math.random() - 0.5);
     console.log(answers);
-  }, [answers, quiz]);
+  }, [quiz]);
   console.log(answers);
 
   return (

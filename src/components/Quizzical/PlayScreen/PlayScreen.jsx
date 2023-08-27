@@ -15,14 +15,14 @@ function PlayScreen() {
   }, []);
 
   function fetchQuizzesFromApi(url) {
-    // setLoading(true);
+    setLoading(true);
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         let temp = data.results;
         temp = temp.map((item) => ({ ...item, selected_answer: "" }));
         setQuizzes(temp);
-        // setLoading(false);
+        setLoading(false);
       });
   }
 
