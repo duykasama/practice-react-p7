@@ -21,14 +21,17 @@
       background-color: #d6dbf5;
       border: 1px solid #d6dbf5;
     }
-    .missed {
+    .incorrect {
       border: 1px solid #f8bcbc;
       background-color: #f8bcbc;
     }
-    
     .correct {
       border: 1px solid #94D7A2;
       background-color: #94D7A2;
+    }
+    .missed {
+      border: 1px solid #FFBA86;
+      background-color: #FFBA86;
     }
   }
 }

@@ -36,14 +36,18 @@ function Quiz(props) {
           <div
             key={idx}
             onClick={() => props.onSelectAnswer(answer, quiz.correct_answer)}
-            className={`answer${
-              props.selectedAnswer === answer ? " active" : ""
-            }${
-              props.finished &&
-              quiz.correct_answer === answer &&
-              quiz.selected_answer != answer
-                ? " missed"
-                : quiz.selected_answer === answer ? " correct" : ""
+            className={`answer ${
+              props.finished
+                ? props.selectedAnswer === answer
+                  ? quiz.correct_answer === answer
+                    ? " correct"
+                    : " incorrect"
+                  : quiz.correct_answer === answer
+                  ? " missed"
+                  : ""
+                : props.selectedAnswer === answer
+                ? " active"
+                : ""
             }`}
           >
             {answer}
