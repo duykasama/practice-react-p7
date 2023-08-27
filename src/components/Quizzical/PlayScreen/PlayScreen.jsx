@@ -7,6 +7,7 @@ function PlayScreen() {
   const [quizzes, setQuizzes] = useState([]);
   const [showAnswer, setShowAnswer] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
   const apiUrl = "https://opentdb.com/api.php?amount=10&type=multiple";
 
   useEffect(() => {
@@ -14,13 +15,36 @@ function PlayScreen() {
   }, []);
 
   function fetchQuizzesFromApi(url) {
-    setLoading(true);
+    // setLoading(true);
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setQuizzes(data.results);
-        setLoading(false);
+        let temp = data.results;
+        temp = temp.map((item) => ({ ...item, selected_answer: "" }));
+        setQuizzes(temp);
+        // setLoading(false);
       });
+  }
+
+  const handleSelectAnswer = (answer, correctAnswer) => {
+    let temp = quizzes;
+    temp = temp.map((item) => ({
+      ...item,
+      selected_answer:
+        correctAnswer === item.correct_answer ? answer : item.selected_answer,
+    }));
+    setQuizzes(temp);
+  };
+
+  function checkAnswers() {
+    setShowAnswer((prevState) => !prevState);
+    let count = 0;
+    quizzes.forEach((quiz) => {
+      if (quiz.correct_answer === quiz.selected_answer) {
+        count++;
+      }
+    });
+    setCorrectAnswerCount(count);
   }
 
   console.log(quizzes);
@@ -31,17 +55,22 @@ function PlayScreen() {
       <div className="play-screen">
         <div className="quizzes">
           {quizzes.map((quiz, idx) => (
-            <Quiz key={idx} index={idx} quiz={quiz} />
+            <Quiz
+              key={idx}
+              index={idx}
+              quiz={quiz}
+              selectedAnswer={quiz.selected_answer}
+              onSelectAnswer={handleSelectAnswer}
+            />
           ))}
         </div>
         <div className="result">
           {showAnswer && (
-            <div>You scored 0/{quizzes.length} correct answers</div>
+            <div>
+              You scored {correctAnswerCount}/{quizzes.length} correct answers
+            </div>
           )}
-          <button
-            onClick={() => setShowAnswer((prevState) => !prevState)}
-            className="btn"
-          >
+          <button onClick={checkAnswers} className="btn">
             {!showAnswer ? "Check answers" : "Play again"}
           </button>
         </div>
