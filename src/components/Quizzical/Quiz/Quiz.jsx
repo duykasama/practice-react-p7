@@ -4,6 +4,7 @@ import "./quiz.scss";
 function Quiz(props) {
   const quiz = props.quiz;
   const [answers, setAnswers] = useState([]);
+
   useEffect(() => {
     let temp = [];
     quiz.incorrect_answers.forEach((answer) => temp.push(answer));
@@ -37,6 +38,12 @@ function Quiz(props) {
             onClick={() => props.onSelectAnswer(answer, quiz.correct_answer)}
             className={`answer${
               props.selectedAnswer === answer ? " active" : ""
+            }${
+              props.finished &&
+              quiz.correct_answer === answer &&
+              quiz.selected_answer != answer
+                ? " missed"
+                : quiz.selected_answer === answer ? " correct" : ""
             }`}
           >
             {answer}

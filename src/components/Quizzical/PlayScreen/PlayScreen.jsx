@@ -59,6 +59,7 @@ function PlayScreen() {
               key={idx}
               index={idx}
               quiz={quiz}
+              finished={showAnswer}
               selectedAnswer={quiz.selected_answer}
               onSelectAnswer={handleSelectAnswer}
             />
