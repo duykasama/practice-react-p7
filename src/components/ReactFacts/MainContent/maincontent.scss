@@ -13,6 +13,7 @@
     background-size: 30rem;
     background-position: calc(100% + 15rem) 50%;
   }
+  padding-bottom: 1rem;
   .container {
     margin: 2rem;
     display: flex;
@@ -23,16 +24,32 @@
       position: relative;
       height: 1.15rem;
       width: 2.25rem;
-      background-color: whitesmoke;
+      background-color: #242424;
       border-radius: 10px;
       padding: 0.07rem;
       #dot {
         position: absolute;
         width: 1rem;
         height: 1rem;
-        background-color: #242424;
+        background-color: whitesmoke;
         border-radius: 50%;
         transition: 0.5s;
+      }
+      .dark {
+        @keyframes move-to-right {
+          to {
+            transform: translateX(1.15rem);
+          }
+        }
+        animation: move-to-right 200ms 1 forwards linear;
+      }
+      .light {
+        @keyframes move-to-left {
+          from {
+            transform: translateX(1.15rem);
+          }
+        }
+        animation: move-to-left 200ms 1 forwards linear;
       }
     }
   }

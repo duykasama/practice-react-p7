@@ -53,7 +53,7 @@ function PlayScreen() {
 
   return (
     <>
-      {loading && <Loader />}
+      {loading && <Loader title={"Loading quizzes..."} />}
       <div className="play-screen">
         <div className="quizzes">
           {quizzes.map((quiz, idx) => (

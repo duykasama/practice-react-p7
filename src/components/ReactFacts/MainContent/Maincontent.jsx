@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./maincontent.scss";
 import { DarkTheme } from "./Styles";
 import { LightTheme } from "./Styles";
 
 function MainContent() {
   const [isDark, setIsDark] = useState(false);
-  const darkThemeStyles = LightTheme();
-  const lightThemeStyles = DarkTheme();
+  const darkThemeStyles = DarkTheme();
+  const lightThemeStyles = LightTheme();
+
+  useEffect(() => {
+    if (localStorage.getItem("darkMode")) {
+      setIsDark(true);
+      setTheme(darkThemeStyles);
+      console.log("set dark theme");
+    }
+  }, []);
 
   function setTheme(styles) {
     const body = document.getElementsByClassName("react-facts--main")[0];
@@ -14,28 +22,29 @@ function MainContent() {
     const themeControl = document.getElementById("theme-control");
     body.style.backgroundColor = styles.bgColor;
     body.style.color = styles.textColor;
-    dot.style.backgroundColor = styles.bgColor;
     themeControl.style.backgroundColor = styles.textColor;
-    dot.style.left = isDark ? "0.1rem" : "calc(100% - 1.2rem + 0.1rem)";
+    dot.style.backgroundColor = styles.bgColor;
   }
 
   function handleClick() {
     setIsDark((prevState) => !prevState);
     if (isDark) {
-      setTheme(darkThemeStyles);
-    } else {
       setTheme(lightThemeStyles);
+      localStorage.removeItem("darkMode");
+    } else {
+      setTheme(darkThemeStyles);
+      localStorage.setItem("darkMode", "true");
     }
   }
 
   return (
     <div className="content">
       <div className="container">
-        <span>Dark</span>
-        <div onClick={handleClick} id="theme-control">
-          <div id="dot"></div>
-        </div>
         <span>Light</span>
+        <div onClick={handleClick} id="theme-control">
+          <div id="dot" className={isDark ? "dark" : "light"}></div>
+        </div>
+        <span>Dark</span>
       </div>
 
       <h1 className="react-facts--title">Fun facts about React</h1>

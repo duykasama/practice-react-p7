@@ -1,9 +1,9 @@
 import "./loader.scss";
 
-function Loader() {
+function Loader(props) {
   return (
     <div className="loader">
-      <h1>Loading content</h1>
+      <h1>{props.title}</h1>
       <div className="circle"></div>
     </div>
   );
