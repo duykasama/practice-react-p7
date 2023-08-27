@@ -24,13 +24,13 @@ function Quiz(props) {
     return arr1.every((e) => arr2.includes(e));
   }
 
-  console.log(answers);
-
   return (
     <div className="quiz">
-      <h3>
-        {props.index + 1}. {quiz.question}
-      </h3>
+      <h3
+        dangerouslySetInnerHTML={{
+          __html: `${props.index + 1}. ${quiz.question}`,
+        }}
+      />
       <div className="answers">
         {answers.map((answer, idx) => (
           <div
@@ -49,9 +49,8 @@ function Quiz(props) {
                 ? " active"
                 : ""
             }`}
-          >
-            {answer}
-          </div>
+            dangerouslySetInnerHTML={{ __html: `${answer}` }}
+          />
         ))}
       </div>
     </div>
