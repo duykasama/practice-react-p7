@@ -5,20 +5,24 @@ function Quiz(props) {
   const quiz = props.quiz;
   const [answers, setAnswers] = useState([]);
   useEffect(() => {
-    // answers.push(quiz.correct_answer);
-    
-      setAnswers(() => {
-        let temp = [];
-        quiz.incorrect_answers.forEach((answer) => temp.push(answer));
-        // temp.push(quiz.incorrect_answers);
-        temp.push(quiz.correct_answer);
-        return temp.sort((a, b) => Math.random() - 0.5);
-        // return temp;
-      });
-    
-    // answers = answers.sort((a, b) => Math.random() - 0.5);
-    console.log(answers);
+    let temp = [];
+    quiz.incorrect_answers.forEach((answer) => temp.push(answer));
+    temp.push(quiz.correct_answer);
+    if (isIdenticalArray(answers, temp)) {
+      return;
+    }
+    setAnswers(() => {
+      return temp.sort((a, b) => Math.random() - 0.5);
+    });
   }, [quiz]);
+
+  function isIdenticalArray(arr1, arr2) {
+    if (arr1.length != arr2.length) {
+      return false;
+    }
+    return arr1.every((e) => arr2.includes(e));
+  }
+
   console.log(answers);
 
   return (
