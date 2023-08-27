@@ -38,6 +38,10 @@ function PlayScreen() {
 
   function checkAnswers() {
     setShowAnswer((prevState) => !prevState);
+    if (showAnswer){
+      fetchQuizzesFromApi(apiUrl);
+      return;
+    }
     let count = 0;
     quizzes.forEach((quiz) => {
       if (quiz.correct_answer === quiz.selected_answer) {
@@ -46,8 +50,6 @@ function PlayScreen() {
     });
     setCorrectAnswerCount(count);
   }
-
-  console.log(quizzes);
 
   return (
     <>
