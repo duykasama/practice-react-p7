@@ -120,6 +120,7 @@
 }
 
 .quizzical--main {
+  position: relative;
   height: 70dvh;
   max-height: 900px;
   min-height: fit-content;
@@ -138,6 +139,29 @@
     white 50%,
     #ff99cca1 100%
   );
+  .setting-icon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: #4d5b9e;
+    font-size: 2rem;
+    cursor: pointer;
+    &:hover{
+      transform: scale(120%);
+      transition: transform 100ms linear;
+    }
+    &:active {
+      @keyframes zoom-in {
+        50% {
+          transform: scale(50%);
+        }
+        100% {
+          transform: scale(100%);
+        }
+      }
+      animation: zoom-in 200ms 1 linear;
+    }
+  }
 }
 
 .demo-api--main {

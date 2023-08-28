@@ -1,0 +1,74 @@
+[
+  {
+    "id": 9,
+    "category": "General knowledge"
+  },
+  {
+    "id": 10,
+    "category": "Books"
+  },
+  {
+    "id": 11,
+    "category": "Films"
+  },
+  {
+    "id": 12,
+    "category": "Music"
+  },
+  {
+    "id": 13,
+    "category": "Musical & Theatres"
+  },
+  {
+    "id": 14,
+    "category": "Television"
+  },
+  {
+    "id": 15,
+    "category": "Video Games"
+  },
+  {
+    "id": 16,
+    "category": "Board Games"
+  },
+  {
+    "id": 17,
+    "category": "Science & Nature"
+  },
+  {
+    "id": 18,
+    "category": "Computers"
+  },
+  {
+    "id": 19,
+    "category": "Mathematics"
+  },
+  {
+    "id": 20,
+    "category": "Mythology"
+  },
+  {
+    "id": 21,
+    "category": "Sports"
+  },
+  {
+    "id": 22,
+    "category": "Geography"
+  },
+  {
+    "id": 23,
+    "category": "History"
+  },
+  {
+    "id": 24,
+    "category": "Politics"
+  },
+  {
+    "id": 25,
+    "category": "Art"
+  },
+  {
+    "id": 26,
+    "category": "Celebrities"
+  }
+]

@@ -12,7 +12,6 @@ function MainContent() {
     if (localStorage.getItem("darkMode")) {
       setIsDark(true);
       setTheme(darkThemeStyles);
-      console.log("set dark theme");
     }
   }, []);
 

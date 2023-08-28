@@ -11,7 +11,13 @@ function PlayScreen() {
   const apiUrl = "https://opentdb.com/api.php?amount=10&type=multiple";
 
   useEffect(() => {
-    fetchQuizzesFromApi(apiUrl);
+    const settings = localStorage.getItem("quizzicalSettings");
+    let url = apiUrl;
+    if (settings) {
+      const { topic, questions, difficulty } = JSON.parse(settings);
+      url = `https://opentdb.com/api.php?amount=${questions}&category=${topic}${difficulty && `&difficulty=${difficulty}`}`;
+    }
+    fetchQuizzesFromApi(url);
   }, []);
 
   function fetchQuizzesFromApi(url) {
@@ -38,7 +44,7 @@ function PlayScreen() {
 
   function checkAnswers() {
     setShowAnswer((prevState) => !prevState);
-    if (showAnswer){
+    if (showAnswer) {
       fetchQuizzesFromApi(apiUrl);
       return;
     }
