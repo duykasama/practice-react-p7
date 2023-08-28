@@ -21,9 +21,10 @@ function PlayScreen() {
       }`;
       setApiUrl(currentUrl);
       fetchQuizzesFromApi(currentUrl);
+    }else {
+      fetchQuizzesFromApi(apiUrl);
     }
-    fetchQuizzesFromApi(apiUrl);
-  }, [apiUrl]);
+  }, []);
 
   function fetchQuizzesFromApi(url) {
     setLoading(true);
